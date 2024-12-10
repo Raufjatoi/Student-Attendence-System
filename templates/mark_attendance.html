@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>Mark Attendance for Class {{ class_name }}</h4>
+
+    <form action="/attendance/mark/{{ class_id }}" method="POST">
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Attendance Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>
+                            <select name="attendance_status_{{ student.id }}" class="browser-default">
+                                <option value="present" selected>Present</option>
+                                <option value="absent">Absent</option>
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn blue">Submit Attendance</button>
+    </form>
+{% endblock %}

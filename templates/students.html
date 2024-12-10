@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>Students in {{ class_name }}</h4>
+    <ul class="collection">
+        {% for student in students %}
+        <li class="collection-item">
+            {{ student[3] }} (Roll No: {{ student[2] }})
+            <a href="{{ url_for('delete_student', student_id=student[0], class_id=class_id) }}" class="secondary-content">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <form action="{{ url_for('add_student', class_id=class_id) }}" method="POST">
+        <div class="input-field">
+            <input id="student_name" type="text" name="student_name" required>
+            <label for="student_name">Student Name</label>
+        </div>
+        <div class="input-field">
+            <input id="student_roll_no" type="text" name="student_roll_no" required>
+            <label for="student_roll_no">Roll No</label>
+        </div>
+        <button class="btn">Add Student</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+{% endblock %}

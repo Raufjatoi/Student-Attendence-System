@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>Add New Class</h4>
+    <form action="/classes/add" method="POST">
+        <div class="input-field">
+            <input id="class_name" type="text" name="class_name" required>
+            <label for="class_name">Class Name</label>
+        </div>
+        <div class="input-field">
+            <input id="class_description" type="text" name="class_description" required>
+            <label for="class_description">Class Description</label>
+        </div>
+
+        <button type="submit" class="btn blue">Add Class</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Mark Attendance - {{ class_name }}{% endblock %}
+
+{% block content %}
+    <h4>Mark Attendance for Class: {{ class_name }}</h4>
+
+    <!-- Form to Mark Attendance -->
+    <form method="POST">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <div class="input-field">
+            <label for="student_id">Student</label>
+            <select id="student_id" name="student_id" required>
+                <option value="" disabled selected>Select a student</option>
+                {% for student in students %}
+                    <option value="{{ student[0] }}">{{ student[1] }} (Roll No: {{ student[2] }})</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Attendance Status: Cross (Absent) or Tick (Present) -->
+        <div class="input-field">
+            <label></label>
+            <div class="attendance-status">
+                <label>
+                    <input type="radio" name="status" value="Present" required />
+                    <span class="green-text">✔ Present</span>
+                </label>
+                <label>
+                    <input type="radio" name="status" value="Absent" required />
+                    <span class="red-text">✘ Absent</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="input-field">
+            <label for="date"></label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+    </form>
+{% endblock %}

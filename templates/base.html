@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the page */
+        .container {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+
+        /* Navbar background color */
+        nav {
+            background-color: #007bff;
+        }
+
+        /* Navbar brand styling */
+        .brand-logo {
+            font-weight: bold;
+        }
+
+        /* Navbar item link styling */
+        .nav-wrapper .left,
+        .nav-wrapper .right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Button style for nav links */
+        .nav-item {
+            margin-right: 10px;
+        }
+
+        /* Hover effect for nav links */
+        .nav-link:hover {
+            background-color: #0056b3 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar using Materialize CSS -->
+    <nav>
+        <div class="nav-wrapper">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-logo">Attendance System</a>
+
+            <!-- Navbar Links -->
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/classes">Classes</a></li>
+                <li><a href="/attendance/mark">Mark Attendance</a></li>
+                <li><a href="/attendance/view/1">View Attendance</a></li>
+            </ul>
+
+            <!-- Navbar mobile menu button -->
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/classes">Classes</a></li>
+        <li><a href="/attendance/view/1">View Attendance</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize Sidenav for mobile menu
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+
+</html>
