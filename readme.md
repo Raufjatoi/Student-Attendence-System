@@ -35,7 +35,7 @@ Welcome to the **Attendance System** app! 🎉 This app allows teachers to easil
 1. Clone this repo:
 
    ```bash
-   git clone https://github.com/raufjatoi/attendance-system.git
+   git clone https://github.com/raufjatoi/Student-Attendance-System.git
    ```
 
 2. Install the required dependencies:
@@ -126,19 +126,7 @@ We love contributions! 💖
 
 ## 👨‍💻 Contributors
 
-- [Your Name](https://github.com/your-username) — Creator & Maintainer 🎉
-- [Collaborator Name](https://github.com/collaborator) — Contributor ✨
-
----
-
-## 🏷️ License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details. 📄
-
----
-
-## 🌟 Let’s make attendance tracking a breeze! 🎉
-
+- [Rauf](https://github.com/raufjatoi) — none else yet 
 ---
 
 ## 🎨 Add Some Fun Animations! (Optional)
@@ -160,15 +148,4 @@ You can include some CSS animations for buttons or page transitions, such as:
 <button class="btn animated-button">Click Me!</button>
 ```
 
-Feel free to customize this app as you see fit, and happy coding! ✨
-
----
-
-**Thank you for using the Attendance System!** 💖 Enjoy, and don't forget to mark attendance! 📚
-```
-
-### What you get:
-
-- **Fun and Colorful Markdown**: It includes emojis, badges, and vibrant sections that make the content more readable and engaging.
-- **Clear Steps and Instructions**: Each section is structured clearly, with bold headings and separated instructions.
-- **Custom CSS Animations**: I included a section for optional button animations using CSS to make your README even more interactive.
+Feel free to customize this app as you see fit
