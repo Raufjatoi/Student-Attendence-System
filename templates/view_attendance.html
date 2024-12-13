@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h4>View Attendance for Class {{ class_name }}</h4>
+    <h4>View Attendance for Class {{ class_.name }}</h4>
 
     <table class="striped">
         <thead>
@@ -13,12 +13,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for record in attendance_records %}
+            {% for attendance, student in attendance_records %}
                 <tr>
-                    <td>{{ record.student_id }}</td>
-                    <td>{{ record.student_name }}</td>
-                    <td>{{ record.status }}</td>
-                    <td>{{ record.date }}</td>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ attendance.status }}</td>
+                    <td>{{ attendance.date.strftime('%Y-%m-%d') }}</td>
                 </tr>
             {% endfor %}
         </tbody>

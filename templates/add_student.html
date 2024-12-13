@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h4>Add Students to Class {{ class_name }}</h4>
-    <form action="/students/add/{{ class_id }}" method="POST">
+    <h4>Add Students to Class {{ class_.name }}</h4>
+    <form action="{{ url_for('add_student', class_id=class_.id) }}" method="POST">
         <div class="input-field">
             <input id="student_name" type="text" name="student_name" required>
             <label for="student_name">Student Name</label>
         </div>
+
         <div class="input-field">
-            <input id="student_id" type="text" name="student_id" required>
-            <label for="student_id">Student ID</label>
+            <input id="roll_no" type="text" name="roll_no" required>
+            <label for="roll_no">Roll No</label>
         </div>
 
         <button type="submit" class="btn blue">Add Student</button>

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h4>Mark Attendance for Class {{ class_name }}</h4>
+    <h4>Mark Attendance for Class {{ class_.name }}</h4>
 
-    <form action="/attendance/mark/{{ class_id }}" method="POST">
+    <form action="/attendance/mark/{{ class_.id }}" method="POST">
+        <div class="input-field">
+            <label for="attendance_date">Date</label>
+            <input type="date" id="attendance_date" name="attendance_date" value="{{ datetime.utcnow().strftime('%Y-%m-%d') }}" />
+        </div>
+
         <table class="striped">
             <thead>
                 <tr>
@@ -19,7 +24,7 @@
                         <td>{{ student.name }}</td>
                         <td>
                             <select name="attendance_status_{{ student.id }}" class="browser-default">
-                                <option value="present" selected>Present</option>
+                                <option value="present">Present</option>
                                 <option value="absent">Absent</option>
                             </select>
                         </td>
